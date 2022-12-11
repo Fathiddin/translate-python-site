@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="section">
+<!-- search -->
+<h1 class="title is-1">
+    
+    <center>
+        Search <img src="{% static 'search.png' %}" width="40" alt="">
+    </center>
+</h1>
+
+<script>
+    function inlineSearch(query){
+        console.log(query)
+    }
+
+</script>
+
+<form action="{% url 'main:search' %}" method="get">
+    <div class="columns">
+        <div class="column is-9">
+            <div class="field">
+                <div class="control">
+                  <input class="input" name="query" type="text" placeholder="Search text">
+                </div>
+            </div>
+        
+        </div>
+        <div class="column is-3">
+            <div class="field is-grouped">
+                <div class="control">
+                  <button type="submit" class="button is-link">Search</button>
+                </div>
+              </div>
+        </div>
+    </div>
+
+</form>
+    
+
+</div>
+{% endblock %}

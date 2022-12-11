@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="section">
+    <form action="http://127.0.0.1:8000/added/" method="post">
+        {% csrf_token %}
+        <div class="columns">
+            <div class="column is-6">
+                
+                <label class="label">O'zbekchasi</label>
+                <input class="input" required name="uzb" type="text" placeholder="Yozing">
+            </div>
+            <div class="column is-6">
+                <label class="label">Inglizchasi</label>
+                <input class="input" required name="eng" type="text" placeholder="Yozing">
+            </div>
+        </div>
+        <div class="control">
+            <button type="submit" class="button is-link">Yozish</button>
+          </div>
+    </form>
+
+</div>
+
+{% endblock %}

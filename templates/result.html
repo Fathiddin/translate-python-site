@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="section">
+    {% if lists %}
+
+<table class="table" style="width: 100%;">
+    <tr>
+        <th>
+            O'zbekchasi
+        </th>
+        <th>
+            Inglizchasi
+        </th>
+    </tr>
+    
+{% for x in lists %}
+    <tr>
+        
+        <td>
+            {{x.uzb}}
+        </td>
+        <td>
+            {{x.eng}}
+        </td>
+
+    </tr>
+{% endfor %}
+</table>
+{% else %}
+
+<h1 class="title is-1">
+    
+    <center>
+        Not Found
+    </center>
+</h1>
+{% endif %}
+
+</div>
+{% endblock %}
